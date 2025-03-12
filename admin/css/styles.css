@@ -158,3 +158,8 @@ body {
 .card:nth-child(4) {
     border-left: 7px solid #cc3c43;
 }
+
+.card > span {
+    font-size: 20px;
+    font-weight: 600;
+}
