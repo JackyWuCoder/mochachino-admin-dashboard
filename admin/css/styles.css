@@ -33,6 +33,10 @@ body {
     grid-area: header;
 }
 
+.menu-icon {
+    display: none;
+}
+
 /* ---------- MAIN ---------- */
 
 .main-container {
