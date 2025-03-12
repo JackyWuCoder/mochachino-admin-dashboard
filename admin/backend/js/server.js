@@ -32,3 +32,10 @@ app.post('/api/convention', (req, res) => {
     activities.push({ date: new Date(), action: 'Added', section: 'Conventions', details });
     res.status(201).json({ message: 'Convention added successfully!' });
 });
+
+// Write Blog Post
+app.post('/api/blog', (req, res) => {
+    const { details } = req.body;
+    activities.push({ date: new Date(), action: 'Published', section: 'Blog', details });
+    res.status(201).json({ message: 'Blog post published successfully!' });
+});
