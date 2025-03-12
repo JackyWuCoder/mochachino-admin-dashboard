@@ -204,6 +204,11 @@ body {
     padding: 12px;
 }
 
+.activity-table th {
+    background-color: #ffffff;
+    font-weight: 600;
+}
+
 /* ---------- MEDIA QUERIES ---------- */
 
 /* Medium <= 992px */
