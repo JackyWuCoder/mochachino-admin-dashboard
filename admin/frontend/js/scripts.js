@@ -3,20 +3,6 @@
 let sidebarOpen = false;
 const sidebar = document.getElementById("sidebar");
 
-function openSidebar() {
-  if (!sidebarOpen) {
-    sidebar.classList.add("sidebar-responsive");
-    sidebarOpen = true;
-  }
-}
-
-function closeSidebar() {
-  if (sidebarOpen) {
-    sidebar.classList.remove("sidebar-responsive");
-    sidebarOpen = false;
-  }
-}
-
 document.querySelectorAll(".action-btn").forEach(button => {
   button.addEventListener("click", async (e) => {
       const action = e.currentTarget.dataset.action;
@@ -57,3 +43,44 @@ document.querySelectorAll(".action-btn").forEach(button => {
     }
   })
 })
+
+function openSidebar() {
+  if (!sidebarOpen) {
+    sidebar.classList.add("sidebar-responsive");
+    sidebarOpen = true;
+  }
+}
+
+function closeSidebar() {
+  if (sidebarOpen) {
+    sidebar.classList.remove("sidebar-responsive");
+    sidebarOpen = false;
+  }
+}
+
+async function fetchActivities( ) {
+  const res = await fetch("httpL//localhost:5000/api/activities");
+  const data = await res.json();
+
+  const tableBody = document.querySelector(".activity-table tbody");
+  tableBody.innerHTML = "";
+
+  data.forEach(activity => {
+    const row = `<tr>
+        <td>${new Date(activity.date).toLocaleDateString()}</td>
+        <td>${activity.action}</td>
+        <td>${activity.section}</td>
+        <td>${activity.details}</td>
+      </tr>`;
+      tableBody.innerHTML += row;
+  })
+}
+
+// Refresh activities after each action
+document.querySelectorAll('.action-btn').forEach(button => {
+  button.addEventListener('click', () => {
+      setTimeout(fetchActivities, 500);
+  });
+});
+
+fetchActivities(); // Initial load
