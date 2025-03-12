@@ -205,8 +205,16 @@ body {
 }
 
 .activity-table th {
-    background-color: #ffffff;
+    background-color: #f4f4f4;
     font-weight: 600;
+}
+
+.activity-table tbody {
+    background-color: #f9f9f9;
+}
+
+.activity-table tbody tr:hover {
+    background-color: #e6e6e6;
 }
 
 /* ---------- MEDIA QUERIES ---------- */
