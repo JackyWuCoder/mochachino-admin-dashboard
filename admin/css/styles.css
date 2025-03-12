@@ -53,6 +53,12 @@ body {
     font-weight: 700;
 }
 
+.sidebar-list {
+    padding: 0;
+    margin-top: 15px;
+    list-style-type: none;
+}
+
 /* ---------- HEADER ---------- */
 
 .header {
