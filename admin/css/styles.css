@@ -191,7 +191,7 @@ body {
     font-size: 35px;
 }
 
-/* ---------- Recent Activity ---------- */
+/* ---------- RECENT ACTIVITY ---------- */
 
 .activity-table {
     width: 100%;
@@ -217,6 +217,9 @@ body {
 .activity-table tbody tr:hover {
     background-color: #e6e6e6;
 }
+
+/* ---------- QUICK ACTIONS ---------- */
+
 
 /* ---------- MEDIA QUERIES ---------- */
 
