@@ -170,7 +170,7 @@ body {
     justify-content: space-between;
 }
 
-.card-inner > p {
+.card-inner > h2 {
     font-size: 18px;
 }
 
