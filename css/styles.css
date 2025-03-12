@@ -1,22 +1,49 @@
 body {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
-/********** HEADER **********/
+/********** TOPBAR **********/
 
-.header {
+#topbar {
     display: flex;
     justify-content: space-around;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #fff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 100%;
 }
 
-.artist-name {
-    color: #1f2937;
+.topbar-title > span {
+    display: none;
 }
 
-.nav {
-    width: 50%;
+nav {
+    flex-grow: 1;
+}
+
+.topbar-list {
     display: flex;
     justify-content: space-evenly;
     align-items: center;
+    list-style-type: none;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+.topbar-list-item {
+    padding: 10px 15px;
+    cursor: pointer;
+    font-weight: 500;
+    color: #333;
+    border-radius: 4px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.topbar-list-item:hover {
+    background-color: #e5e6eb;
+    color: #111;
 }

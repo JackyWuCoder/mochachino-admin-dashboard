@@ -8,34 +8,49 @@
         <!-- Favicon -->
         <link rel="icon" href="img/mochachino-logo.png" type="image/png">
 
+        <!-- Material Icons -->
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined"
+        rel="stylesheet">
+
         <!-- Custom CSS -->
         <link rel="stylesheet" href="css/styles.css">
     </head>
     <body>
-        <!-- Header -->
-        <header class="header">
-            <div class="artist-name">
-                <h1>Mochachino</h1>
+        <!-- Topbar -->
+        <aside id="topbar">
+            <div class="topbar-title">
+                <div class="topbar-brand">
+                    <div class="topbar-brand-logo">
+                        <img src="img/mochachino-logo.png" alt="Mochachino Logo">
+                    </div>
+                    <div class="topbar-brand-name">
+                        <span>Mochachino</span>
+                    </div>
+                </div>
+                <span class="material-icons-outlined" onclick="closeSidebar()">close</span>
             </div>
-            <nav class="nav" aria-label="Portfolio Navigation">
-                <div class="home">
-                    Home
-                </div>
-                <div class="home">
-                    Portfolio
-                </div>
-                <div class="home">
-                    Commissions
-                </div>
-                <div class="home">
-                    Conventions
-                </div>
-                <div class="home">
-                    Blog
-                </div>
+
+            <nav aria-label="Top Bar Navigation">
+                <ul class="topbar-list">
+                    <li class="topbar-list-item">
+                       Dashboard
+                    </li>
+                    <li class="topbar-list-item">
+                        Portfolio
+                    </li>
+                    <li class="topbar-list-item">
+                        Commissions
+                    </li>
+                    <li class="topbar-list-item">
+                        Conventions
+                    </li>
+                    <li class="topbar-list-item">
+                        Blog
+                    </li>
+                </ul>
             </nav>
-        </header>
-        <!-- End Header -->
+        </aside>
+        <!-- End Topbar -->
 
     </body>
 </html>
