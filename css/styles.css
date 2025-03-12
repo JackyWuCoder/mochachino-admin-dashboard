@@ -62,3 +62,53 @@ nav {
     font-size: 2.25rem;
     color: #1f2937;
 }
+
+/********** PORTFOLIO TABS **********/
+
+.portfolio-tabs {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid #e5e6eb;
+}
+
+.portfolio-tabs-container {
+    display: flex;
+    justify-content: center;
+}
+
+.portfolio-tabs-wrapper {
+    display:flex;
+    justify-content: center;
+}
+
+.portfolio-tab {
+    padding: 0.5rem 1.5rem; 
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: #1f2937;       
+    background-color: #ffffff;
+    border: 1px solid #FADADD; 
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.portfolio-tab:first-child {
+    border-radius: 0.375rem 0 0 0.375rem;
+}
+
+.portfolio-tab:last-child {
+    border-radius: 0 0.375rem 0.375rem 0;
+}
+
+.portfolio-tab.active {
+    background-color: #fadadd;
+    color: #1f2937;
+}
+
+.portfolio-tab:hover {
+    background-color: #ffe4e1;
+}
+
+.portfolio-tab:focus {
+    outline: 2px solid #fadadd;
+}
