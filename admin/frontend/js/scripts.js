@@ -53,7 +53,7 @@ document.querySelectorAll(".action-btn").forEach(button => {
       const result = await response.json();
       alert(result.message);
     } catch (error) {
-
+      console.error("Error:", error);
     }
   })
 })
