@@ -18,3 +18,10 @@ app.post("/api/artwork", (req, res) => {
     activities.push({ date: new Date(), action: "Added", section: "Portfolio", details });
     res.status(201).json({ message: "Artwork added successfully!" });
  })
+
+// Update Commission Status
+app.post('/api/commission', (req, res) => {
+    const { details } = req.body;
+    activities.push({ date: new Date(), action: 'Updated', section: 'Commissions', details });
+    res.status(201).json({ message: 'Commission status updated successfully!' });
+});
