@@ -40,6 +40,10 @@ body {
     margin-bottom: 30px;
 }
 
+.sidebar-title > span {
+    display: none;
+}
+
 /* ---------- HEADER ---------- */
 
 .header {
