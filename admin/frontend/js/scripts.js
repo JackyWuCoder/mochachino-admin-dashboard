@@ -42,5 +42,15 @@ document.querySelectorAll(".action-btn").forEach(button => {
         default:
             return;
     }
+
+    try {
+      const response = await fetch(`http://localhost:5000${apiUrl}` , {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ details })
+      });
+    } catch (error) {
+
+    }
   })
 })
