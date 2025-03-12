@@ -47,3 +47,18 @@ nav {
     background-color: #e5e6eb;
     color: #111;
 }
+
+/********** HEADER **********/
+
+.header-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #ffebef;
+}
+
+.portfolio-heading {
+    font-size: 2.25rem;
+    color: #1f2937;
+}
