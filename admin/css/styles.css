@@ -220,6 +220,15 @@ body {
 
 /* ---------- QUICK ACTIONS ---------- */
 
+.quick-actions {
+    margin-top: 20px;
+}
+
+.actions-buttons {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
 
 /* ---------- MEDIA QUERIES ---------- */
 
