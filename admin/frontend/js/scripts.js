@@ -16,3 +16,9 @@ function closeSidebar() {
     sidebarOpen = false;
   }
 }
+
+document.querySelectorAll(".action-btn").forEach(button => {
+  button.addEventListener("click", async (e) => {
+    const action = e.target.innerText.trim();
+  })
+})
