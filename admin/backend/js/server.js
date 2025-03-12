@@ -25,3 +25,10 @@ app.post('/api/commission', (req, res) => {
     activities.push({ date: new Date(), action: 'Updated', section: 'Commissions', details });
     res.status(201).json({ message: 'Commission status updated successfully!' });
 });
+
+// Add Convention
+app.post('/api/convention', (req, res) => {
+    const { details } = req.body;
+    activities.push({ date: new Date(), action: 'Added', section: 'Conventions', details });
+    res.status(201).json({ message: 'Convention added successfully!' });
+});
