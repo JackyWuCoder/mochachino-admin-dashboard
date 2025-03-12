@@ -59,6 +59,10 @@ body {
     list-style-type: none;
 }
 
+.sidebar-list-item {
+    padding: 20px 20px 20px 20px;
+}
+
 /* ---------- HEADER ---------- */
 
 .header {
