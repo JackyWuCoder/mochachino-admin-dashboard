@@ -22,5 +22,6 @@ document.querySelectorAll(".action-btn").forEach(button => {
       const action = e.target.innerText.trim();
       let apiURL = "";
       let details = prompt(`Enter details for ${action}`);
+      if (!details) return alert("Details are required!");
   })
 })
