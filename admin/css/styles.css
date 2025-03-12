@@ -202,6 +202,7 @@ body {
 .activity-table th, .activity-table td {
     border: 1px solid #ccc;
     padding: 12px;
+    text-align: left;
 }
 
 .activity-table th {
