@@ -19,6 +19,6 @@ function closeSidebar() {
 
 document.querySelectorAll(".action-btn").forEach(button => {
   button.addEventListener("click", async (e) => {
-    const action = e.target.innerText.trim();
+      const action = e.target.innerText.trim();
   })
 })
