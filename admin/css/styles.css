@@ -30,6 +30,7 @@ body {
 .text-orange {
     color: #f5b74f;
 }
+
 .font-weight-bold {
     font-weight: 600;
 }
@@ -111,4 +112,10 @@ body {
 .main-container {
     grid-area: main;
     overflow-y: auto;
+    padding: 20px 20px;
+}
+
+.main-title {
+    display: flex;
+    justify-content: space-between;
 }
