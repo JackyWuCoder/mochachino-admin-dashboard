@@ -25,6 +25,7 @@ body {
 
 #sidebar {
     grid-area: sidebar;
+    overflow-y: auto;
 }
 
 /* ---------- HEADER ---------- */
@@ -41,4 +42,5 @@ body {
 
 .main-container {
     grid-area: main;
+    overflow-y: auto;
 }
