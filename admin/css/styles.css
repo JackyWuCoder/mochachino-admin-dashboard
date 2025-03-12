@@ -46,6 +46,16 @@ body {
     height: 100vh;
 }
 
+/* ---------- HEADER ---------- */
+
+.header {
+    grid-area: header;
+}
+
+.menu-icon {
+    display: none;
+}
+
 /* ---------- SIDEBAR ---------- */
 
 #sidebar {
@@ -97,16 +107,6 @@ body {
     display: inline !important;
     position: absolute;
 }  
-
-/* ---------- HEADER ---------- */
-
-.header {
-    grid-area: header;
-}
-
-.menu-icon {
-    display: none;
-}
 
 /* ---------- MAIN ---------- */
 
