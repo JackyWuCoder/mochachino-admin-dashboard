@@ -39,3 +39,8 @@ app.post('/api/blog', (req, res) => {
     activities.push({ date: new Date(), action: 'Published', section: 'Blog', details });
     res.status(201).json({ message: 'Blog post published successfully!' });
 });
+
+// Get Recent Activities
+app.get('/api/activities', (req, res) => {
+    res.status(200).json(activities);
+});
