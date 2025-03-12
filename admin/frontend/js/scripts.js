@@ -19,10 +19,10 @@ function closeSidebar() {
 
 document.querySelectorAll(".action-btn").forEach(button => {
   button.addEventListener("click", async (e) => {
-      const action = e.target.innerText.trim();
+      const action = e.currentTarget.dataset.action;
 
       let apiURL = "";
-      let details = prompt(`Enter details for ${action}`);
+      let details = prompt(`Enter details for "${action}"`);
 
       if (!details) return alert("Details are required!");
 
