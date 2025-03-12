@@ -49,6 +49,9 @@ document.querySelectorAll(".action-btn").forEach(button => {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ details })
       });
+
+      const result = await response.json();
+      alert(result.message);
     } catch (error) {
 
     }
