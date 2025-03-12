@@ -6,3 +6,17 @@ body {
     color: #666666;
     font-family: "Montserrat", sans-serif;
 }
+
+.material-icons-outlined {
+    vertical-align: middle;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: 260px 1fr 1fr 1fr;
+    grid-template-rows: 0.2fr 3fr;
+    grid-template-areas:
+        "sidebar header header header"
+        "sidebar main main main";
+    height: 100vh;
+}
