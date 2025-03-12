@@ -44,3 +44,7 @@ app.post('/api/blog', (req, res) => {
 app.get('/api/activities', (req, res) => {
     res.status(200).json(activities);
 });
+
+app.listen(PORT, () => {
+    console.log(`Server running on http://localhost:${PORT}`);
+});
