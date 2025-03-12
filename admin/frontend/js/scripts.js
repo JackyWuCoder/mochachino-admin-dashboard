@@ -44,6 +44,15 @@ document.querySelectorAll(".action-btn").forEach(button => {
   })
 })
 
+// Refresh activities after each action
+document.querySelectorAll('.action-btn').forEach(button => {
+  button.addEventListener('click', () => {
+      setTimeout(fetchActivities, 500);
+  });
+});
+
+fetchActivities(); // Initial load
+
 function openSidebar() {
   if (!sidebarOpen) {
     sidebar.classList.add("sidebar-responsive");
@@ -59,7 +68,7 @@ function closeSidebar() {
 }
 
 async function fetchActivities( ) {
-  const res = await fetch("httpL//localhost:5000/api/activities");
+  const res = await fetch("http//localhost:5000/api/activities");
   const data = await res.json();
 
   const tableBody = document.querySelector(".activity-table tbody");
@@ -75,12 +84,3 @@ async function fetchActivities( ) {
       tableBody.innerHTML += row;
   })
 }
-
-// Refresh activities after each action
-document.querySelectorAll('.action-btn').forEach(button => {
-  button.addEventListener('click', () => {
-      setTimeout(fetchActivities, 500);
-  });
-});
-
-fetchActivities(); // Initial load
