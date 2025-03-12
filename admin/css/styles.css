@@ -230,6 +230,37 @@ body {
     flex-wrap: wrap;
 }
 
+/* First Button - Add Artwork */
+.actions-buttons button:nth-child(1) {
+    border: 2px solid #246dec;;
+}
+
+/* Second Button - Update Commission Status */
+.actions-buttons button:nth-child(2) {
+    border: 2px solid #f5b74f;
+}
+
+/* Third Button - Add Convention */
+.actions-buttons button:nth-child(3) {
+    border: 2px solid #367952;
+}
+
+/* Fourth Button - Write Blog Post */
+.actions-buttons button:nth-child(4) {
+    border: 2px solid #cc3c43;
+}
+
+.action-btn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-weight: 600;
+}
+
 /* ---------- MEDIA QUERIES ---------- */
 
 /* Medium <= 992px */
