@@ -11,6 +11,29 @@ body {
     vertical-align: middle;
 }
 
+.text-primary {
+    color: #666666;
+}
+
+.text-blue {
+    color: #246dec;
+}
+
+.text-red {
+    color: #cc3c43;
+}
+
+.text-green {
+    color: #367952;
+}
+
+.text-orange {
+    color: #f5b74f;
+}
+.font-weight-bold {
+    font-weight: 600;
+}
+
 .grid-container {
     display: grid;
     grid-template-columns: 260px 1fr 1fr 1fr;
