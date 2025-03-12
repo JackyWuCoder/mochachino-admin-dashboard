@@ -32,6 +32,14 @@ body {
     transition: all 0.5s;
 }
 
+.sidebar-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 20px 20px 20px;
+    margin-bottom: 30px;
+}
+
 /* ---------- HEADER ---------- */
 
 .header {
