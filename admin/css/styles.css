@@ -68,6 +68,11 @@ body {
     cursor: pointer;
 }
 
+.sidebar-responsive {
+    display: inline !important;
+    position: absolute;
+}  
+
 /* ---------- HEADER ---------- */
 
 .header {
