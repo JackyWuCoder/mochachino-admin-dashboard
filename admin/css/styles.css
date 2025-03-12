@@ -20,3 +20,21 @@ body {
         "sidebar main main main";
     height: 100vh;
 }
+
+/* ---------- SIDEBAR ---------- */
+
+#sidebar {
+    grid-area: sidebar;
+}
+
+/* ---------- HEADER ---------- */
+
+.header {
+    grid-area: header;
+}
+
+/* ---------- MAIN ---------- */
+
+.main-container {
+    grid-area: main;
+}
