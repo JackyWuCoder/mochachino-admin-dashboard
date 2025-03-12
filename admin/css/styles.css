@@ -199,6 +199,11 @@ body {
     margin-top: 30px;
 }
 
+.activity-table th, .activity-table td {
+    border: 1px solid #ccc;
+    padding: 12px;
+}
+
 /* ---------- MEDIA QUERIES ---------- */
 
 /* Medium <= 992px */
