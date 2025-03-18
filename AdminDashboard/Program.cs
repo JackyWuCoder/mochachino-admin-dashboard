@@ -5,6 +5,10 @@ builder.Services.AddRazorPages();
 
 var app = builder.Build();
 
+// Ensure upload directory exists
+Directory.CreateDirectory("wwwroot/uploads");
+Directory.CreateDirectory("Data");
+
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
 {
@@ -13,7 +17,7 @@ if (!app.Environment.IsDevelopment())
     app.UseHsts();
 }
 
-app.UseHttpsRedirection();
+//app.UseHttpsRedirection();
 app.UseStaticFiles();
 
 app.UseRouting();
