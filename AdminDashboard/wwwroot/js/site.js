@@ -1,4 +1,19 @@
-﻿// Please see documentation at https://learn.microsoft.com/aspnet/core/client-side/bundling-and-minification
-// for details on configuring this project to bundle and minify static web assets.
+﻿// SIDEBAR TOGGLE
+let sidebarOpen = false;
+const sidebar = document.getElementById("sidebar");
 
-// Write your JavaScript code.
+// Open Sidebar
+function openSidebar() {
+  if (!sidebarOpen) {
+    sidebar.classList.add("sidebar-responsive");
+    sidebarOpen = true;
+  }
+}
+
+// Close Sidebar
+function closeSidebar() {
+  if (sidebarOpen) {
+    sidebar.classList.remove("sidebar-responsive");
+    sidebarOpen = false;
+  }
+}
