@@ -8,6 +8,7 @@ public class PortfolioModel : PageModel
     private readonly string _dataPath = "Data/portfolio.json";
 
     public string UploadMessage { get; set; }
+    public List<string> UploadedImages { get; set; } = new();
 
     public async Task<IActionResult> OnPostUploadAsync(IFormFile upload)
     {
@@ -28,6 +29,36 @@ public class PortfolioModel : PageModel
 
             UploadMessage = "Upload successful!";
         }
+
         return Page();
+    }
+
+    public IActionResult OnPostDelete(string fileName)
+    {
+        var filePath = Path.Combine(_uploadPath, fileName);
+        if (System.IO.File.Exists(filePath))
+        {
+            System.IO.File.Delete(filePath);
+            UploadMessage = "File deleted successfully!";
+        }
+        else
+        {
+            UploadMessage = "File not found!";
+        }
+
+        LoadUploadedImages();
+        return Page();
+    }
+
+    private void LoadUploadedImages()
+    {
+        if (Directory.Exists(_uploadPath))
+        {
+            UploadedImages = Directory.GetFiles(_uploadPath)
+                .Select(Path.GetFileName)
+                .Where(x => x != null) // Ensures no null values
+                .Select(x => x!) // Converts to non-nullable string
+                .ToList();
+        }
     }
 }
