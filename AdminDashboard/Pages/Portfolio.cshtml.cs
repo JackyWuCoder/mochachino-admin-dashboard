@@ -10,26 +10,36 @@ public class PortfolioModel : PageModel
     public string UploadMessage { get; set; }
     public List<string> UploadedImages { get; set; } = new();
 
+    // Load images when the page loads
+    public void OnGet()
+    {
+        LoadUploadedImages();
+    }
+
     public async Task<IActionResult> OnPostUploadAsync(IFormFile upload)
     {
-        if (upload != null && upload.Length > 0)
+        if (upload == null || upload.Length == 0)
         {
-            var filePath = Path.Combine(_uploadPath, upload.FileName);
-
-            // Save the uploaded file
-            using (var stream = new FileStream(filePath, FileMode.Create))
-            {
-                await upload.CopyToAsync(stream);
-            }
-            
-            // Update JSON data (simplified)
-            var imageData = new { FileName = upload.FileName, Path = $"/uploads/{upload.FileName}" };
-            var jsonData = JsonSerializer.Serialize(imageData);
-            await System.IO.File.WriteAllTextAsync(_dataPath, jsonData);
-
-            UploadMessage = "Upload successful!";
+            UploadMessage = "No file selected.";
+            return Page();
         }
 
+        var filePath = Path.Combine(_uploadPath, upload.FileName);
+
+        // Save the uploaded file
+        using (var stream = new FileStream(filePath, FileMode.Create))
+        {
+            await upload.CopyToAsync(stream);
+        }
+        
+        // Update JSON data (simplified)
+        var imageData = new { FileName = upload.FileName, Path = $"/uploads/{upload.FileName}" };
+        var jsonData = JsonSerializer.Serialize(imageData);
+        await System.IO.File.WriteAllTextAsync(_dataPath, jsonData);
+
+        UploadMessage = "Upload successful!";
+
+        LoadUploadedImages(); // Refresh images after upload
         return Page();
     }
 
@@ -60,5 +70,6 @@ public class PortfolioModel : PageModel
                 .Select(x => x!) // Converts to non-nullable string
                 .ToList();
         }
+        Console.WriteLine($"Found {UploadedImages.Count} images in uploads folder.");
     }
 }
