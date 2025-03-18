@@ -1,0 +1,108 @@
+@page
+@model DashboardModel
+@{
+    ViewData["Title"] = "Dashboard";
+}
+
+<!-- Dashboard Title -->
+<div class="main-title">
+    <h1 class="font-weight-bold">DASHBOARD</h1>
+</div>
+
+<!-- Dashboard Cards -->
+<div class="main-cards">
+
+    <div class="card">
+        <div class="card-inner">
+            <h2 class="text-primary">PORTFOLIO</h2>
+            <span class="material-icons-outlined text-blue">collections</span>
+        </div>
+        <span class="text-primary font-weight-bold">@Model.PortfolioCount</span>
+        <div class="card-description">
+            <p>Total Artworks</p>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="card-inner">
+            <h2 class="text-primary">COMMISSIONS</h2>
+            <span class="material-icons-outlined text-orange">design_services</span>
+        </div>
+        <span class="text-primary font-weight-bold">@Model.CommissionsCount</span>
+        <div class="card-description">
+            <p>Active Slots</p>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="card-inner">
+            <h2 class="text-primary">CONVENTIONS</h2>
+            <span class="material-icons-outlined text-green">event</span>
+        </div>
+        <span class="text-primary font-weight-bold">@Model.ConventionsCount</span>
+        <div class="card-description">
+            <p>Upcoming Events</p>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="card-inner">
+            <h2 class="text-primary">BLOG</h2>
+            <span class="material-icons-outlined text-red">article</span>
+        </div>
+        <span class="text-primary font-weight-bold">@Model.BlogCount</span>
+        <div class="card-description">
+            <p>Recent Posts</p>
+        </div>
+    </div>
+
+</div>
+
+<!-- Recent Activity -->
+<div class="recent-activity">
+    <h2 class="section-title">Recent Activity</h2>
+    <table class="activity-table">
+        <thead>
+            <tr>
+                <th>Date</th>
+                <th>Action</th>
+                <th>Section</th>
+                <th>Details</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var activity in Model.RecentActivities)
+            {
+                <tr>
+                    <td>@activity.Date</td>
+                    <td>@activity.ActionType</td>
+                    <td>@activity.Section</td>
+                    <td>@activity.Details</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+
+<!-- Quick Actions -->
+<div class="quick-actions">
+    <h2 class="section-title">Quick Actions</h2>
+    <div class="actions-buttons">
+        <button class="action-btn" data-action="Add Artwork">
+            <span class="material-icons-outlined text-blue">add_photo_alternate</span>
+            Add Artwork
+        </button>
+        <button class="action-btn" data-action="Update Commission Status">
+            <span class="material-icons-outlined text-orange">update</span>
+            Update Commission Status
+        </button>
+        <button class="action-btn" data-action="Add Convention">
+            <span class="material-icons-outlined text-green">event</span>
+            Add Convention
+        </button>
+        <button class="action-btn" data-action="Write Blog Post">
+            <span class="material-icons-outlined text-red">edit_note</span>
+            Write Blog Post
+        </button>
+    </div>
+</div>
