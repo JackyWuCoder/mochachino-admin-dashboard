@@ -6,7 +6,8 @@
 
 <h2>Upload Image to Portfolio</h2>
 
-<form method="post" enctype="multipart/form-data">
+<!-- Upload form -->
+<form method="post" enctype="multipart/form-data" asp-page-handler="Upload">
     <input type="file" name="upload" required />
     <button type="submit">Upload</button>
 </form>
@@ -14,4 +15,28 @@
 @if (!string.IsNullOrEmpty(Model.UploadMessage))
 {
     <p>@Model.UploadMessage</p>
+}
+
+<hr>
+
+<!-- Display Uploaded Images -->
+<h3>Uploaded Images</h3>
+@if (Model.UploadedImages.Count > 0)
+{
+    <ul>
+        @foreach (var image in Model.UploadedImages)
+        {
+            <li>
+                <img src="/uploads/@image" alt="@image" width="100" />
+                <form method="post" asp-page-handler="Delete">
+                    <input type="hidden" name="fileName" value="@image" />
+                    <button type="submit" style="color: red;">Delete</button>
+                </form>
+            </li>
+        }
+    </ul>
+}
+else
+{
+    <p>No images uploaded yet.</p>
 }
