@@ -1,0 +1,17 @@
+@page
+@model PortfolioModel
+@{
+    ViewData["Title"] = "Portfolio";
+}
+
+<h2>Upload Image to Portfolio</h2>
+
+<form method="post" enctype="multipart/form-data">
+    <input type="file" name="upload" required />
+    <button type="submit">Upload</button>
+</form>
+
+@if (!string.IsNullOrEmpty(Model.UploadMessage))
+{
+    <p>@Model.UploadMessage</p>
+}
