@@ -110,6 +110,10 @@
   box-shadow: 0px -2px 5px rgba(0, 0, 0, 0.1);
 }
 
+.footer strong {
+  color: #333;
+}
+
 /* ---------- MEDIA QUERIES ---------- */
 
 /* Medium <= 992px */
